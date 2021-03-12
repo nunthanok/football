@@ -16,8 +16,6 @@ $mysqli = new mysqli (
 
         echo "Fail to connect to mysql : ". mysqli -> connect_error;
         exit();
-    }else{
-        echo "Connected";
-    }
+    };
 
 ?>

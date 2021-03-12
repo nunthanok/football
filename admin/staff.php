@@ -1,3 +1,7 @@
+<?php 
+include("../database/connect.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,7 +136,7 @@
 						
 					<div class="row">
 							<div class="col-lg-6">
-								<button class="btn btn-primary btn-lg"> Add New Staff</button>
+								<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus fa-2x"></i> Add New Staff</button>
 							</div>
 							<div class="col-lg-6">
 								<form class="form-inline pull-right">
@@ -150,42 +154,50 @@
 						<thead style="background-color: #30a5ff; color: white;">
 							<tr>
 								<th>No.</th>
-								<th>Member ID</th>
-								<th>Register Date</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Book QTY</th>
-                                <th>Detail</th>
+								<th>Staff Name</th>
+								<th>Staff Phone</th>
+                                <th>Staff Username</th>
+                                <th>Staff Status</th>
+								<th>Staff Role</th>
+                                <th>Edit</th>
 							</tr>
 						</thead>
 						<tbody>
+
+							<?php 
+							$sql = "SELECT * FROM staffs";
+							$result = $mysqli->query($sql);
+							$no = 1;
+							
+							if($result->num_rows > 0){
+								
+							 
+								while($row = $result->fetch_assoc()){
+								
+
+								
+							
+
+							?>
+
 							<tr>
-								<td>1</td>
-								<td>M0001</td>
-								<td>31/08/2021</td>
-                                <td>Nanthanok</td>
-                                <td>020 59415161</td>
-                                <td>2</td>
-                                <td><button class="btn btn-primary">Detail</button></td>
+								<td><?php echo $no++?></td>
+								<td><?php echo $row["staff_name"]?></td>
+								<td><?php echo $row["staff_phone"]?></td>
+                                <td><?php echo $row["staff_username"]?></td>
+                                <td><?php echo $row["staff_status"]?></td>
+                                <td><?php echo $row["staff_role"]?></td>
+                                <td><button class="btn btn-primary">Edit</button></td>
 							</tr>
-							<tr>
-                                <td>2</td>
-								<td>M0002</td>
-								<td>31/08/2021</td>
-                                <td>Souvanna</td>
-                                <td>020 59415161</td>
-                                <td>5</td>
-                                <td><button class="btn btn-primary">Detail</button></td>
-							</tr>
-							<tr>
-                                <td>3</td>
-								<td>M0003</td>
-								<td>31/08/2021</td>
-                                <td>Amone</td>
-                                <td>020 59415161</td>
-                                <td>0</td>
-                                <td><button class="btn btn-primary">Detail</button></td>
-							</tr>
+
+							<?php 
+									}
+						
+								}else{
+									echo "0 Result";
+								} $mysqli->close(); 
+							?>
+
 						</tbody>
 					</table>
 					</div>
@@ -195,7 +207,30 @@
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 			</div>
 		</div><!--/.row-->
+		
 	</div>	<!--/.main-->
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel"><i class="fa fa-user-plus fa-2x"></i> Add New Staff</h4>
+		</div>
+		<div class="modal-body">
+			...
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+		</div>
+	</div>
+	</div>
+
 	  
 
 	<script src="js/jquery-1.11.1.min.js"></script>
