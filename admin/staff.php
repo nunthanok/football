@@ -103,7 +103,7 @@
 			<li><a href="counter.php"><em class="fa fa-calendar">&nbsp;</em> Counter</a></li>
 			<li><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
 			<li><a href="member.php"><em class="fa fa-bar-chart">&nbsp;</em> Member</a></li>
-            <li class="active"><a href="staff.php"><em class="fa fa-bar-chart">&nbsp;</em> Couter Data</a></li>
+            <li class="active"><a href="staff.php"><em class="fa fa-bar-chart">&nbsp;</em> Staff</a></li>
 
 			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> Members</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li> -->
@@ -117,7 +117,7 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Counter</li>
+				<li class="active">Staff</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -130,15 +130,15 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						
-						<div class="row">
+					<div class="row">
 							<div class="col-lg-6">
-								Counter Data
+								<button class="btn btn-primary btn-lg"> Add New Staff</button>
 							</div>
 							<div class="col-lg-6">
 								<form class="form-inline pull-right">
 									<div class="form-group">
-										<label class="sr-only" for="exampleInputPassword3">Search Member</label>
-										<input type="password" class="form-control" id="" placeholder="Date">
+										<label class="sr-only" for="exampleInputPassword3">Search</label>
+										<input type="password" class="form-control" size="40" id="" placeholder="Date">
 									</div>
 									<button type="submit" class="btn btn-primary btn-lg">Search</button>
 								</form>

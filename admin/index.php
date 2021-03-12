@@ -103,7 +103,7 @@
 			<li><a href="counter.php"><em class="fa fa-calendar">&nbsp;</em> Counter</a></li>
 			<li><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
 			<li><a href="member.php"><em class="fa fa-bar-chart">&nbsp;</em> Member</a></li>
-			<li><a href="staff.php"><em class="fa fa-bar-chart">&nbsp;</em> Couter Data</a></li>
+			<li><a href="staff.php"><em class="fa fa-bar-chart">&nbsp;</em> Staff</a></li>
 
 
 			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> Members</a></li>
