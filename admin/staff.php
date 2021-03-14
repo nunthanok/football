@@ -166,7 +166,7 @@ include("../database/connect.php");
 
 							<?php 
 							$sql = "SELECT * FROM staffs";
-							$result = $mysqli->query($sql);
+							$result = $conn->query($sql);
 							$no = 1;
 							
 							if($result->num_rows > 0){
@@ -195,7 +195,7 @@ include("../database/connect.php");
 						
 								}else{
 									echo "0 Result";
-								} $mysqli->close(); 
+								} $conn->close(); 
 							?>
 
 						</tbody>

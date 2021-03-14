@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli (
+$conn = new mysqli (
 
     $host = "localhost",
     $username = "root",
@@ -12,7 +12,7 @@ $mysqli = new mysqli (
 
     // Check connection 
 
-    if($mysqli -> connect_errno){
+    if($conn -> connect_errno){
 
         echo "Fail to connect to mysql : ". mysqli -> connect_error;
         exit();
