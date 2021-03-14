@@ -39,3 +39,49 @@
 
 	</div>
 	</div>
+
+
+
+
+	<!-- Modal -->
+<div class="modal fade" id="editStaff" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Edit Staff Data</h3>
+      </div>
+	  <form id="edit_staff" name="edit_staff" role="form"> <!--Form add new staff-->
+      <div class="modal-body">
+        
+	  		<div class="form-group">
+				<label for="name">Staff Name</label>
+				<input type="hidden"  id="staff_id" name="staff_id">
+				<input type="text" class="form-control" id="edit_name" name="edit_name" >
+			</div>
+			<div class="form-group">
+				<label for="username">Staff Username</label>
+				<input type="text" class="form-control" id="edit_username" name="edit_username" >
+			</div>
+			<div class="form-group">
+				<label for="password">Staff Password</label>
+				<input type="password" class="form-control" id="edit_password" name="edit_password" >
+			</div>
+			<div class="form-group">
+				<label for="phone">Staff Phone</label>
+				<input type="phone" class="form-control" id="edit_phone" name="edit_phone" >
+			</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+	  
+    </div>
+
+	</form><!--End form-->
+
+  </div>
+</div>
