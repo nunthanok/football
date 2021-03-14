@@ -187,7 +187,7 @@ include("../database/connect.php");
                                 <td><?php echo $row["staff_username"]?></td>
                                 <td><?php echo $row["staff_status"]?></td>
                                 <td><?php echo $row["staff_role"]?></td>
-								<td><input type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>" value="Edit"></td>
+								<td><button type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></td>
 							</tr>
 
 							<?php 
