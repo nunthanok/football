@@ -43,7 +43,7 @@
 
 
 
-	<!-- Modal -->
+	<!-- Modal Edit Staff-->
 <div class="modal fade" id="editStaff" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -51,7 +51,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" id="myModalLabel">Edit Staff Data</h3>
       </div>
-	  <form id="edit_staff" name="edit_staff" role="form"> <!--Form add new staff-->
+	  <form id="edit_staff" name="edit_staff" role="form"> <!--Form Edit staff-->
       <div class="modal-body">
         
 	  		<div class="form-group">
@@ -76,7 +76,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" id="update">Save changes</button>
       </div>
 	  
     </div>

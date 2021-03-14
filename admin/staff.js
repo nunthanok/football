@@ -17,11 +17,9 @@ $(document).ready(function(){
                     alert("Error");
                 }
             });
-    
-
     });
 
-
+    // Get id and fetch data where id
     $(document).on('click', '.edit_data', function(){
          $("#editStaff").modal("show");
         var staff_id = $(this).data("id");
@@ -41,9 +39,23 @@ $(document).ready(function(){
                 $('#staff_id').val(data.staff_id);
                 console.log(data.staff_id);
             }
+        });  
+    });
+
+    // Update data where id
+    $("#edit_staff").on('submit', function(event){
+        event.preventDefault();
+        $.ajax({
+            url: "edit_staff_save.php",
+            method: "POST",
+            data: $(this).serialize(),
+            success:function(data){
+                $("#editStaff").modal("hide");  
+            },
+            error:function(){
+                alert("Error");
+            }
         });
-       
-        
     });
 
 
