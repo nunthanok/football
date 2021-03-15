@@ -1,7 +1,7 @@
 <?php 
 include("../database/connect.php");
 ?>
-
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <table class="table table-hover table-bordered">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
@@ -30,7 +30,11 @@ include("../database/connect.php");
             <td><?php echo $row["staff_name"]?></td>
             <td><?php echo $row["staff_phone"]?></td>
             <td><?php echo $row["staff_username"]?></td>
-            <td><?php echo $row["staff_status"]?></td>
+            <td>
+            
+            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+
+            </td>
             <td>
             <?php  $role = $row["staff_role"]; 
 
@@ -54,3 +58,5 @@ include("../database/connect.php");
 
     </tbody>
 </table>
+
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
