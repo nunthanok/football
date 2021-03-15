@@ -32,7 +32,7 @@ include("../database/connect.php");
             <td><?php echo $row["staff_username"]?></td>
             <td>
             
-            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" class="staff_status" data-id="<?php echo $row["staff_id"]?>">
 
             </td>
             <td>
@@ -60,3 +60,36 @@ include("../database/connect.php");
 </table>
 
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+
+    $(".staff_status").on('change',function(event){
+        event.preventDefault();
+
+        var status = this.checked ? 'ON' : 'OFF';
+        var staff_id = $(this).data("id")
+        console.log(staff_id);
+        console.log(status);
+
+        $.ajax({
+
+            url: "change_status_staff.php",
+            method: "POST",
+            data:{ status : status, staff_id : staff_id },
+            dataType: "json",
+            success: function(data){
+
+            },
+            error: function(){
+               alert("Error");
+            }
+        });
+
+    });
+
+});
+
+</script>
