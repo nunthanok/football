@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    loadTableStaff();
 
 
     $("#add_staff").submit(function(event){
@@ -12,6 +13,7 @@ $(document).ready(function(){
                     // $("#feedback").html(message)
                     $("#myModal").modal('hide'); 
                     $("#add_staff")[0].reset();
+                    loadTableStaff();
                 },
                 error: function(){
                     alert("Error");
@@ -31,26 +33,28 @@ $(document).ready(function(){
             data:{staff_id:staff_id},
             dataType: "json",
             success:function(data){
-                console.log(data);
+                // console.log(data);
                 $('#edit_name').val(data.staff_name);
                 $('#edit_username').val(data.staff_username);
                 $('#edit_password').val(data.staff_password);
                 $('#edit_phone').val(data.staff_phone);
                 $('#staff_id').val(data.staff_id);
-                console.log(data.staff_id);
+                // console.log(data.staff_id);
             }
         });  
     });
 
     // Update data where id
-    $("#edit_staff").on('submit', function(event){
+    $("#edit_staff").submit( function(event){
         event.preventDefault();
         $.ajax({
             url: "edit_staff_save.php",
             method: "POST",
             data: $(this).serialize(),
             success:function(data){
+                console.log(data);
                 $("#editStaff").modal("hide");  
+                loadTableStaff();
             },
             error:function(){
                 alert("Error");
@@ -58,8 +62,10 @@ $(document).ready(function(){
         });
     });
 
-
-
 });
 
+// function Load table staff
+function loadTableStaff(){
+    $("#tabel_staff").load("table_staff.php");
+}
 
