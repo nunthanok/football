@@ -31,9 +31,12 @@ include("../database/connect.php");
             <td><?php echo $row["staff_phone"]?></td>
             <td><?php echo $row["staff_username"]?></td>
             <td>
-            
-            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" class="staff_status" data-id="<?php echo $row["staff_id"]?>">
 
+            <?php if($row["staff_status"]="ON"); {?>
+            
+            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-off="Closed" data-on="Open" class="staff_status" data-id="<?php echo $row["staff_id"]?>">
+            
+            <?php }?>
             </td>
             <td>
             <?php  $role = $row["staff_role"]; 
@@ -75,16 +78,16 @@ $(document).ready(function(){
         console.log(status);
 
         $.ajax({
-
             url: "change_status_staff.php",
             method: "POST",
-            data:{ status : status, staff_id : staff_id },
+            data:{status:status, staff_id:staff_id },
             dataType: "json",
             success: function(data){
+                console.log(data);
 
             },
-            error: function(){
-               alert("Error");
+            error: function(xhr,status,error){
+               console.log(xhr);
             }
         });
 
