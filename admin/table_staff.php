@@ -23,6 +23,7 @@ include("../database/connect.php");
         
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
+                $check = $row["staff_status"] == "ON" ? "checked" : "";
         ?>
 
         <tr>
@@ -30,13 +31,10 @@ include("../database/connect.php");
             <td><?php echo $row["staff_name"]?></td>
             <td><?php echo $row["staff_phone"]?></td>
             <td><?php echo $row["staff_username"]?></td>
-            <td>
-
-            <?php if($row["staff_status"]="ON"); {?>
+            <td class="status">
             
-            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-off="Closed" data-on="Open" class="staff_status" data-id="<?php echo $row["staff_id"]?>">
-            
-            <?php }?>
+            <input type="checkbox"  <?PHP echo $check; ?> data-toggle="toggle" class="staff_status" data-id="<?php echo $row["staff_id"]; ?>" data-onstyle="success" data-offstyle="danger">
+    
             </td>
             <td>
             <?php  $role = $row["staff_role"]; 
@@ -72,8 +70,10 @@ $(document).ready(function(){
     $(".staff_status").on('change',function(event){
         event.preventDefault();
 
-        var status = this.checked ? 'ON' : 'OFF';
-        var staff_id = $(this).data("id")
+         var status = this.checked ? 'ON' : 'OFF';
+        // var status = $(this).closest("tr").find(".status").text();
+        // var staff_id = $(this).closest("tr").find(".edit_data").data("id");
+        var staff_id = $(this).data("id");
         console.log(staff_id);
         console.log(status);
 
@@ -83,16 +83,20 @@ $(document).ready(function(){
             data:{status:status, staff_id:staff_id },
             dataType: "json",
             success: function(data){
-                console.log(data);
+                 console.log(data);
+                 location.reload();
 
             },
             error: function(xhr,status,error){
-               console.log(xhr);
+                console.log(xhr);
             }
         });
 
     });
 
 });
+
+
+
 
 </script>

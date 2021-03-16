@@ -138,9 +138,9 @@
 								<form class="form-inline pull-right">
 									<div class="form-group">
 										<label class="sr-only" for="exampleInputPassword3">Search</label>
-										<input type="password" class="form-control" size="40" id="" placeholder="Date">
+										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Phone">
 									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search</button>
+									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div><!--/.row-->
