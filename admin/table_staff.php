@@ -1,7 +1,8 @@
 <?php 
 include("../database/connect.php");
 ?>
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<!-- <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
+<link href="css/bootstrap-toggle.min.css" rel="stylesheet">
 <table class="table table-hover table-bordered">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
@@ -60,7 +61,7 @@ include("../database/connect.php");
     </tbody>
 </table>
 
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/bootstrap-toggle.min.js"></script>
 
 
 <script>

@@ -130,17 +130,17 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						
-						<div class="row">
+					<div class="row">
 							<div class="col-lg-6">
-								Meber Data
+								<button class="btn btn-primary btn-md"><i class="fa fa-user-plus fa-2x"></i> Add New Member</button>
 							</div>
 							<div class="col-lg-6">
 								<form class="form-inline pull-right">
 									<div class="form-group">
-										<label class="sr-only" for="exampleInputPassword3">Search Member</label>
-										<input type="password" class="form-control" id="" placeholder="Date">
+										<label class="sr-only" for="search">Search</label>
+										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Phone">
 									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search</button>
+									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div><!--/.row-->
