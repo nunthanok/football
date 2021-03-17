@@ -85,3 +85,78 @@
 
   </div>
 </div>
+
+
+
+
+
+	<!-- Modal Add Member-->
+	<div class="modal fade" id="modalAddMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Add New Member</h3>
+      </div>
+	  <form id="add_member" name="add_member" role="form"> <!--Form Edit staff-->
+      <div class="modal-body">
+        
+	  		<div class="form-group">
+				<label for="name">Member Name</label>
+				<input type="text" class="form-control" id="m_name" name="m_name" placeholder="Member Name">
+			</div>
+			<div class="form-group">
+				<label for="phone">Member Phone</label>
+				<input type="text" class="form-control" id="m_phone" name="m_phone" placeholder="Member Phone">
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+	  
+    </div>
+
+	</form><!--End form-->
+
+  </div>
+</div>
+
+
+
+
+
+	<!-- Modal Edit Member-->
+	<div class="modal fade" id="modalEditMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Edit Member Data</h3>
+      </div>
+	  <form id="edit_member" name="edit_member" role="form"> <!--Form Edit staff-->
+      <div class="modal-body">
+        
+	  		<div class="form-group">
+				<label for="name">Member Name</label>
+				<input type="hidden" id="mem_id" name="mem_id">
+				<input type="text" class="form-control" id="edit_m_name" name="edit_m_name">
+			</div>
+			<div class="form-group">
+				<label for="phone">Member Phone</label>
+				<input type="text" class="form-control" id="edit_m_phone" name="edit_m_phone" >
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+	  
+    </div>
+
+	</form><!--End form-->
+
+  </div>
+</div>

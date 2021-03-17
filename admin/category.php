@@ -100,9 +100,9 @@
 		</form>
 		<ul class="nav menu">
 			<li ><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Booking</a></li>
-			<li><a href="counter.php"><em class="fa fa-television">&nbsp;</em> Counter</a></li>
+			<li ><a href="counter.php"><em class="fa fa-television">&nbsp;</em>Counter</a></li>
 			<li><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
-			<li class="active"><a href="member.php"><em class="fa fa-user-o">&nbsp;</em> Member</a></li>
+			<li><a href="member.php"><em class="fa fa-user-o">&nbsp;</em> Member</a></li>
 			<li><a href="staff.php"><em class="fa fa-user-secret">&nbsp;</em> Staff</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Product Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
@@ -111,7 +111,7 @@
 					<li><a class="" href="#">
 						<span class="fa fa-angle-right">&nbsp;</span> Products
 					</a></li>
-					<li><a class="" href="category.php">
+					<li><a class="active" href="category.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Categories
 					</a></li>
 					<li><a class="" href="#">
@@ -119,6 +119,7 @@
 					</a></li>
 				</ul>
 			</li>
+
 
 			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> Members</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li> -->
@@ -132,46 +133,76 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Member</li>
+				<li class="active">Category</li>
 			</ol>
 		</div><!--/.row-->
 		
-	
-
+		
 		
 		
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						
-					<div class="row">
-							<div class="col-lg-6">
-								<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#modalAddMember"><i class="fa fa-user-plus fa-2x"></i> Add New Member</button>
-							</div>
-							<div class="col-lg-6">
-								<form class="form-inline pull-right">
-									<div class="form-group">
-										<label class="sr-only" for="search">Search</label>
-										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Phone">
-									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
-								</form>
-							</div>
-						</div><!--/.row-->
+						<div class="col-md-12">
+							Additional Category
+						</div>
 					</div>
 					<div class="panel-body">
-						<div id="table_member"><!--Show Table Member--></div>
+						
+					<!--Row-->
+					<div class="row">
+
+                    <div class="col-md-12">
+                    <form id="add_cat">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Category Name</label>
+                            <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Category Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </form>
+					</div>
+                    
+
+					</div>
+					<!--End Row-->
+
+				</div>
+			</div>
+		</div>
+
+
+			
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Category Details
+                    </div>
+					<div class="panel-body">
+						
+                        <!--Row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="table_category"></div>
+                            </div>
+                        </div>
+                        <!--End Row-->
+						
+
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-12">
+
+			
+
+		</div><!--/.row-->
+
+        <div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 			</div>
-		</div><!--/.row-->
 	</div>	<!--/.main-->
 	  
-	<?php include("modal/modal.php"); ?>
+
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
@@ -180,7 +211,7 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="member.js"></script>
+	<script src="category.js"></script>
 	
 </body>
 </html>

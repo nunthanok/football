@@ -9,7 +9,7 @@ $(document).ready(function(){
                 url: "insert_staff.php",
                 data: $(this).serialize(),
                 success: function(data){
-                    console.log(data);
+                    // console.log(data);
                     // $("#feedback").html(message)
                     $("#myModal").modal('hide'); 
                     $("#add_staff")[0].reset();
@@ -25,7 +25,7 @@ $(document).ready(function(){
     $(document).on('click', '.edit_data', function(){
          $("#editStaff").modal("show");
         var staff_id = $(this).data("id");
-        console.log(staff_id);
+        // console.log(staff_id);
 
         $.ajax({
             url: "edit_staff.php",
@@ -52,7 +52,7 @@ $(document).ready(function(){
             method: "POST",
             data: $(this).serialize(),
             success:function(data){
-                console.log(data);
+                // console.log(data);
                 $("#editStaff").modal("hide");  
                 loadTableStaff();
             },

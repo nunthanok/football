@@ -100,10 +100,26 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Booking</a></li>
-			<li><a href="counter.php"><em class="fa fa-calendar">&nbsp;</em> Counter</a></li>
+			<li><a href="counter.php"><em class="fa fa-television">&nbsp;</em> Counter</a></li>
 			<li><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
-			<li><a href="member.php"><em class="fa fa-bar-chart">&nbsp;</em> Member</a></li>
-			<li><a href="staff.php"><em class="fa fa-bar-chart">&nbsp;</em> Staff</a></li>
+			<li><a href="member.php"><em class="fa fa-user-o">&nbsp;</em> Member</a></li>
+			<li><a href="staff.php"><em class="fa fa-user-secret">&nbsp;</em> Staff</a></li>
+
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+				<em class="fa fa-navicon">&nbsp;</em> Product Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li><a class="" href="#">
+						<span class="fa fa-angle-right">&nbsp;</span> Products
+					</a></li>
+					<li><a class="" href="category.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Categories
+					</a></li>
+					<li><a class="" href="#">
+						<span class="fa fa-angle-right">&nbsp;</span> Units
+					</a></li>
+				</ul>
+			</li>
 
 
 			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> Members</a></li>
