@@ -101,17 +101,17 @@
 		<ul class="nav menu">
 			<li ><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Booking</a></li>
 			<li><a href="counter.php"><em class="fa fa-television">&nbsp;</em> Counter</a></li>
-			<li class="active"><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
+			<li><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
 			<li><a href="member.php"><em class="fa fa-user-o">&nbsp;</em> Member</a></li>
-			<li><a href="staff.php"><em class="fa fa-user-secret">&nbsp;</em> Staff</a></li>
+            <li><a href="staff.php"><em class="fa fa-user-secret">&nbsp;</em> Staff</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Product Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="product.php">
+					<li><a class="active" href="product.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Products
 					</a></li>
-					<li><a class="" href="#">
+					<li><a class="" href="category.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Categories
 					</a></li>
 					<li><a class="" href="unit.php">
@@ -132,11 +132,12 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Report</li>
+				<li class="active">Product</li>
 			</ol>
 		</div><!--/.row-->
 		
-		
+	
+
 		
 		
 		<div class="row">
@@ -144,64 +145,24 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						
-						<div class="row">
+					<div class="row">
 							<div class="col-lg-6">
-								<button class="btn btn-danger btn-lg"> Export to PDF</button>
-								<button class="btn btn-primary btn-lg"> Export to Excel</button>
+								<button class="btn btn-primary btn-md"><i class="fa fa-user-plus fa-2x"></i> Add New Product</button>
 							</div>
 							<div class="col-lg-6">
 								<form class="form-inline pull-right">
 									<div class="form-group">
-										<label class="sr-only" for="exampleInputPassword3">Date</label>
-										<input type="password" class="form-control" size="40" id="" placeholder="Date">
+										<label class="sr-only" for="exampleInputPassword3">Search</label>
+										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Code">
 									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search</button>
+									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
 								</form>
 							</div>
 						</div><!--/.row-->
 					</div>
 					<div class="panel-body">
-					<table class="table table-hover table-bordered">
-						<thead style="background-color: #30a5ff; color: white;">
-							<tr>
-								<th>No.</th>
-								<th>Bill ID</th>
-								<th>Date</th>
-								<th>Customer</th>
-								<th>Price</th>
-								<th>Detail</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>B0001</td>
-								<td>31/08/2021</td>
-								<td>020 59415161</td>
-								<td>1.000.000</td>
-								<td><button class="btn btn-info">Detail</button></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>B0001</td>
-								<td>31/08/2021</td>
-								<td>020 59415161</td>
-								<td>500.000</td>
-								<td><button class="btn btn-info">Detail</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>B0001</td>
-								<td>31/08/2021</td>
-								<td>020 59415161</td>
-								<td>700.000</td>
-								<td><button class="btn btn-info">Detail</button></td>
-							</tr>
-							<tr>
-								<td colspan="6"><h3>Total : 5.000.000 kip</h3></td>
-							</tr>
-						</tbody>
-					</table>
+					<div id="tabel_product"><!--Show table staff --></div>
+					
 					</div>
 				</div>
 			</div>
@@ -209,9 +170,11 @@
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 			</div>
 		</div><!--/.row-->
+		
 	</div>	<!--/.main-->
 	  
-
+ 	<!--php include global File-->
+	 <?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
@@ -220,6 +183,11 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="product.js"></script>
 	
 </body>
 </html>
+
+
+
+

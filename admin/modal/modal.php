@@ -192,3 +192,35 @@
 
   </div>
 </div>
+
+
+
+<!-- Modal Edit Unit-->
+<div class="modal fade" id="modalEditUnit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Edit Unit Data</h3>
+      </div>
+	  <form id="edit_unit_data" name="edit_unit_data" role="form"> <!--Form Edit staff-->
+      <div class="modal-body">
+        
+	  		<div class="form-group">
+				<label for="name">Category Name</label>
+				<input type="hidden" id="u_id" name="u_id">
+				<input type="text" class="form-control" id="edit_u_name" name="edit_u_name">
+			</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+	  
+    </div>
+
+	</form><!--End form-->
+
+  </div>
+</div>

@@ -108,13 +108,13 @@
 				<em class="fa fa-navicon">&nbsp;</em> Product Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
+					<li><a class="" href="product.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Products
 					</a></li>
 					<li><a class="" href="category.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Categories
 					</a></li>
-					<li><a class="" href="#">
+					<li><a class="" href="unit.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Units
 					</a></li>
 				</ul>
