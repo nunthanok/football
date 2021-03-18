@@ -20,17 +20,15 @@
 
     if($result->num_rows > 0){
 
-        while($row = $result->fetch_assoc()){
- 
-    
+        while($row = $result->fetch_assoc()){ 
     
     ?>
 
         <tr>
-            <td><?php echo $no ?></td>
+            <td><?php echo $no++ ?></td>
             <td><?php echo $row["cat_id"]?></td>
             <td><?php echo $row["cat_name"]?></td>
-            <td><button type="button" class="btn btn-warning">Edit</button></td>
+            <td><button type="button" class="btn btn-warning edit_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></td>
         </tr>
 
         <?php }
