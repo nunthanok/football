@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Charts</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/sweetalert2.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -15,6 +16,14 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<style>
+	
+	.validateUnitname{
+  		color: red;
+	}
+	
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -158,6 +167,7 @@
                         <div class="form-group">
                             <label for="unit">Unit Name</label>
                             <input type="text" class="form-control" id="unit_name" name="unit_name" placeholder="Unit Name">
+							<small id="validate" class="form-text text-muted"></small>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
@@ -176,7 +186,7 @@
 			<div class="col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Category Details
+						Units Details
                     </div>
 					<div class="panel-body">
 						
@@ -205,10 +215,7 @@
 	<?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="unit.js"></script>

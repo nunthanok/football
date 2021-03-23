@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Charts</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">	
+	<link href="css/sweetalert2.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -149,15 +150,6 @@
 							<div class="col-lg-6">
 								<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#modalAddMember"><i class="fa fa-user-plus fa-2x"></i> Add New Member</button>
 							</div>
-							<div class="col-lg-6">
-								<form class="form-inline pull-right">
-									<div class="form-group">
-										<label class="sr-only" for="search">Search</label>
-										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Phone">
-									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
-								</form>
-							</div>
 						</div><!--/.row-->
 					</div>
 					<div class="panel-body">
@@ -174,10 +166,7 @@
 	<?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="member.js"></script>

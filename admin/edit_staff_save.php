@@ -11,10 +11,11 @@ $sql = "UPDATE staffs SET staff_name = '$staff_name', staff_phone='$staff_phone'
 
 if(mysqli_query($conn, $sql)){
 
-    echo "Record updated successfully";
+    echo "OK";
+
 }else{
 
-    echo "Error updating record: " . mysqli_error($conn);
+    echo "Fail";
 }
 
 mysqli_close($conn);

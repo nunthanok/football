@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Charts</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/sweetalert2.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -147,16 +148,7 @@
 						
 					<div class="row">
 							<div class="col-lg-6">
-								<button class="btn btn-primary btn-md"><i class="fa fa-user-plus fa-2x"></i> Add New Product</button>
-							</div>
-							<div class="col-lg-6">
-								<form class="form-inline pull-right">
-									<div class="form-group">
-										<label class="sr-only" for="exampleInputPassword3">Search</label>
-										<input type="password" class="form-control" size="40" id="" placeholder="Name Or Code">
-									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
-								</form>
+								<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#modalAddProduct"><i class="fa fa-user-plus fa-2x" ></i> Add New Product</button>
 							</div>
 						</div><!--/.row-->
 					</div>
@@ -177,10 +169,7 @@
 	 <?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="product.js"></script>

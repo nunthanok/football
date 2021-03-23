@@ -1,9 +1,9 @@
 <?php 
 include("../database/connect.php");
 ?>
-<!-- <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
+<link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered" id="staff_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
             <th>No.</th>
@@ -12,7 +12,7 @@ include("../database/connect.php");
             <th>Staff Username</th>
             <th>Staff Status</th>
             <th>Staff Role</th>
-            <th>Edit</th>
+            <th>Manage</th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +47,10 @@ include("../database/connect.php");
                 }
             ?>
             </td>
-            <td><button type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></td>
+            <td>
+            <button type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            </td>
         </tr>
 
         <?php 
@@ -61,6 +64,8 @@ include("../database/connect.php");
     </tbody>
 </table>
 
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
 <script src="js/bootstrap-toggle.min.js"></script>
 
 
@@ -96,6 +101,13 @@ $(document).ready(function(){
     });
 
 });
+
+
+    $(document).ready(function() {
+        $('#staff_table').DataTable();
+    } );
+    
+
 
 
 

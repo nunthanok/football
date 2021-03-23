@@ -1,6 +1,6 @@
 
-
-<table class="table table-hover table-bordered">
+<link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
+<table class="table table-hover table-bordered" id="categories_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
             <th>No.</th>
@@ -28,7 +28,10 @@
             <td><?php echo $no++ ?></td>
             <td><?php echo $row["cat_id"]?></td>
             <td><?php echo $row["cat_name"]?></td>
-            <td><button type="button" class="btn btn-warning edit_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></td>
+            <td>
+            <button type="button" class="btn btn-warning edit_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+            <button type="button" class="btn btn-danger delete_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            </td>
         </tr>
 
         <?php }
@@ -39,3 +42,12 @@
 
     </tbody>
 </table>
+
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#categories_table').DataTable();
+    } );
+</script>

@@ -8,12 +8,12 @@ include("../database/connect.php");
 
  
  $sql = "INSERT INTO staffs (staff_name, staff_phone, staff_username, staff_password, staff_status, staff_role )
- VALUE ('$name', '$phone', '$username', '$password', 'c', '0')";
+ VALUE ('$name', '$phone', '$username', '$password', 'ON', '0')";
 
  if(mysqli_query($conn, $sql)){
-    echo "Successfull";
+    echo "OK";
  }else{
-     echo "Error: " .$sql."". mysqli_error($sql);
+     echo "Fail";
  }
 
  $conn->close();
