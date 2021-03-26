@@ -15,7 +15,7 @@
 
     <?php 
     include("../database/connect.php");
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM products INNER JOIN category ON products.cat_id = category.cat_id INNER JOIN units ON products.u_id = units.u_id";
     $query = $conn->query($sql);
     $no = 1;
 
@@ -31,8 +31,8 @@
             <td><?php echo $row["pro_code"]?></td>
             <td><?php echo $row["pro_name"]?></td>
             <td><?php echo $row["pro_price"]?></td>
-            <td><?php echo $row["u_id"]?></td>
-            <td><?php echo $row["cat_id"]?></td>
+            <td><?php echo $row["u_name"]?></td>
+            <td><?php echo $row["cat_name"]?></td>
             <td>
             <button type="button" name="edit" class="btn btn-warning edit_data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
             <button type="button" name="delete" class="btn btn-danger delete_data"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
