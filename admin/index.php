@@ -13,7 +13,7 @@ include("session.php");
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/sweetalert2.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="css/styles.css" rel="stylesheet">
 	
 	<!--Custom Font-->
@@ -22,6 +22,18 @@ include("session.php");
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<style>
+
+		.clickStadium{
+
+			background-color: green;
+			color: white;
+
+		}
+	
+	</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -125,6 +137,9 @@ include("session.php");
 					<li><a class="" href="unit.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Units
 					</a></li>
+                    <li><a class="" href="order_type.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Order Type
+					</a></li>
 				</ul>
 			</li>
 
@@ -154,7 +169,7 @@ include("session.php");
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						Booking Data
-						<button class="pull-right btn btn-primary">Add Booking</button>
+						<button class="pull-right btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAddBooking">Add Booking</button>
 					</div>
 					<div class="panel-body">
 					<table class="table table-hover table-bordered">
@@ -168,39 +183,12 @@ include("session.php");
 								<th>Stadium</th>
 								<th>Price</th>
 								<th>Status</th>
+								<th>Action</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>B0001</td>
-								<td>31/08/2021</td>
-								<td>Nok</td>
-								<td>020 59415161</td>
-								<td>Satium 1</td>
-								<td>150.000</td>
-								<td><button class="btn btn-sm btn-success">success</button></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>B0002</td>
-								<td>31/08/2021</td>
-								<td>Lar</td>
-								<td>020 59415161</td>
-								<td>Satium 1</td>
-								<td>150.000</td>
-								<td><button class="btn btn-sm btn-success">success</button></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>B0003</td>
-								<td>31/08/2021</td>
-								<td>To</td>
-								<td>020 59415161</td>
-								<td>Satium 1</td>
-								<td>150.000</td>
-								<td><button class="btn btn-sm btn-warning">Waiting</button></td>
-							</tr>
+						<tbody id="booking_detail">
+							<!-- Show Booking Detail-->
+
 						</tbody>
 					</table>
 					</div>
@@ -212,12 +200,26 @@ include("session.php");
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 	  
-
+	<?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/sweetalert2.all.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+	<!-- <script src="js/bootstrap-datepicker.js"></script> -->
 	<script src="js/custom.js"></script>
+	<script src="booking.js"></script>
+
+
+	<script>
+	
+		$(function(){
+			$("#date").datepicker();
+		});
+
+
+		
+	
+	</script>
 
 
 

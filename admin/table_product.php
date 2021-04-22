@@ -1,3 +1,5 @@
+
+
 <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
 <table class="table table-hover table-bordered" id="product_table">
     <thead style="background-color: #30a5ff; color: white;">
@@ -34,8 +36,8 @@
             <td><?php echo $row["u_name"]?></td>
             <td><?php echo $row["cat_name"]?></td>
             <td>
-            <button type="button" name="edit" class="btn btn-warning edit_data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" name="delete" class="btn btn-danger delete_data"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" name="edit" class="btn btn-warning edit_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
             </td>
         </tr>
 
@@ -55,6 +57,7 @@
     $(document).ready(function() {
         $('#product_table').DataTable();
     } );
+
 </script>
 
 

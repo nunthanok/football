@@ -11,6 +11,7 @@ include("session.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Charts</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/sweetalert2.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -21,6 +22,14 @@ include("session.php");
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<style>
+
+		th,tr{
+			font-size: 10px;
+		}
+	</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -123,6 +132,9 @@ include("session.php");
 					<li><a class="" href="unit.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Units
 					</a></li>
+                    <li><a class="" href="order_type.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Order Type
+					</a></li>
 				</ul>
 			</li>
 
@@ -153,14 +165,7 @@ include("session.php");
 						<div class="col-md-6">
 							Product List
 						</div>
-						<div class="col-md-6">
-							<select class="form-control">
-								<option>Categories</option>
-								<option>Foods</option>
-								<option>Drinks</option>
-								<option>Sweeties</option>
-							</select>
-						</div>
+						<div class="col-md-6" id="category_counter_content"></div>
 						
 					</div>
 					<div class="panel-body">
@@ -168,71 +173,7 @@ include("session.php");
 					<!--Row-->
 					<div class="row">
 
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-							<img src="..." alt="...">
-								<div class="caption">
-									<h3>Beer Lao</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary btn-block" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
+					<div id="product_counter"><!--Show Product On Counter Page--></div>
 
 					</div>
 					<!--End Row-->
@@ -244,28 +185,10 @@ include("session.php");
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								Bill List
-								<button class="pull-right btn btn-success">Add Bill</button>
+								<button class="pull-right btn btn-success addBill" data-toggle="modal" data-target="#modalAddbill">Add Bill</button>
 							</div>
 							<div class="panel-body">
-								<div class="row">
-
-									<div class="col-md-3">
-										<h3><span class="label label-warning">Bill 1 / Table 3</span></h3>
-									</div>
-
-									<div class="col-md-3">
-										<h3><span class="label label-warning">Bill 2 / Table 5</span></h3>
-									</div>
-
-									<div class="col-md-3">
-										<h3><span class="label label-warning">Bill 3 / Table 1</span></h3>
-									</div>
-
-									<div class="col-md-3">
-										<h3><span class="label label-warning">Bill 4 / Table 4</span></h3>
-									</div>
-
-								</div>
+								<div class="row" id="bill_counter_content"></div>
 							</div>
 							</div>
 						</div>
@@ -281,12 +204,22 @@ include("session.php");
 				</div>
 			</div>
 			
-			<div class="col-md-4">
+			<div class="col-md-4" id="bill_detail_content">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Bill Detail
-						<span class="pull-right btn btn-success panel-button-tab-left">Bill 1</span></div>
+
+						<div class="row">
+						
+							<div class="col-md-4"><span>Bill Detail</span></div>
+							<div class="col-md-6">
+							<select class="form-control" name="bill_detail_item" id="bill_detail_item" onchange="loadBillDetail()"></select>
+							</div>
+
+						</div>
+						
+					</div>
 					<div class="panel-body">
+						
 						<table class="table table-hover">
 							<thead>
 								<tr>
@@ -295,38 +228,18 @@ include("session.php");
 									<th>QTY</th>
 									<th>Unit</th>
 									<th>Price</th>
+									<th>Total</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Beer Lao</td>
-									<td>6</td>
-									<td>Bottle</td>
-									<td>60.000</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Pepsi</td>
-									<td>3</td>
-									<td>Bottle</td>
-									<td>12.000</td>
-								</tr>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Tiger Head </td>
-									<td>4</td>
-									<td>Bottle</td>
-									<td>12.000</td>
-								</tr>
-							</tbody>
+							<tbody id="bill_detail_list_item"></tbody>
 						</table>
 
 						<div class="row">
 							<div class="col-md-12">
-								<h2 style="text-align:center;"><span class="label label-default">Total : 5.000.000 kip </span></h2><br>
-								<p><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></p>
+								<input type="hidden" id="totalValue" />
+								<h2 style="text-align:center;"><span class="label label-default" id="total"></span></h2><br>
+								<p><button type="button" onclick="payment()" class="btn btn-primary btn-lg btn-block">Checkout</button></p>
 							</div>
 						</div>
 
@@ -338,55 +251,14 @@ include("session.php");
 			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-	  
-
+	<?php include("modal/modal.php"); ?>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
 	<script src="js/custom.js"></script>
-	<script>
-	window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-	var chart2 = document.getElementById("bar-chart").getContext("2d");
-	window.myBar = new Chart(chart2).Bar(barChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-	var chart3 = document.getElementById("doughnut-chart").getContext("2d");
-	window.myDoughnut = new Chart(chart3).Doughnut(doughnutData, {
-	responsive: true,
-	segmentShowStroke: false
-	});
-	var chart4 = document.getElementById("pie-chart").getContext("2d");
-	window.myPie = new Chart(chart4).Pie(pieData, {
-	responsive: true,
-	segmentShowStroke: false
-	});
-	var chart5 = document.getElementById("radar-chart").getContext("2d");
-	window.myRadarChart = new Chart(chart5).Radar(radarData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.05)",
-	angleLineColor: "rgba(0,0,0,.2)"
-	});
-	var chart6 = document.getElementById("polar-area-chart").getContext("2d");
-	window.myPolarAreaChart = new Chart(chart6).PolarArea(polarData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	segmentShowStroke: false
-	});
-};
-	</script>	
+	<script src="product_counter.js"></script>
+		
 </body>
 </html>

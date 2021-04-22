@@ -131,6 +131,9 @@ include("session.php");
 					<li><a class="" href="unit.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Units
 					</a></li>
+					<li><a class="" href="order_type.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Order Type
+					</a></li>
 				</ul>
 			</li>
 

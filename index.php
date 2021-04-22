@@ -36,72 +36,119 @@
         </nav>
         <!--End Navbar-->
 
-        <div class="bg">
+        <div >
         <div class="container"><br>
 
             <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
                 <div class="card-body">
-                <label for="text">Choose soccer field</label><br><hr>
+                <label for="text"><h3>Choose soccer field</h3></label><br><hr>
                     
                 <form>
-                    
-                    <div class="btn-group  mb-3" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio1">STADIUM 1</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio2">STADIUM 2</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio3">STADIUM 3</label>
-                        
-                        
-                    </div>
-                    
-
-                    <div class="col-12 mb-3">Date: <input type="text" class="form-control" id="datepicker"></div>
 
                     <div class="row">
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-4">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options-outlined" id="stadium1" autocomplete="off" >
+                            <label class="btn btn-outline-success" for="stadium1">STADIUM No.1</label>   
+                        </div>
+                        </div>
+                        <div class="col-4">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options-outlined" id="stadium2" autocomplete="off">
+                            <label class="btn btn-outline-success" for="stadium2">STADIUM No.2</label>       
+                        </div>
+                        </div>
+                        <div class="col-4">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options-outlined" id="stadium3" autocomplete="off">
+                            <label class="btn btn-outline-success" for="stadium3">STADIUM No.3</label>    
+                        </div>
+                        </div>
+                        
+                    </div><br>
+                    
+                    
+                    
+
+                    <div class="col-12 mb-3">
+                    <label for="text"><h3>Choose Date</h3></label>
+                     <input type="text" class="form-control" id="datepicker"></div>
+
+
+
+                    <div class="row">
+                    <label for="text"><h3>Choose Time</h3></label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time1" autocomplete="off" >
+                            <label class="btn btn-outline-success" for="Time1">08:00 - 09:00</label>   
+                        </div>
                         </div>
 
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time2" autocomplete="off">
+                            <label class="btn btn-outline-success" for="Time2">08:00 - 09:00</label>       
+                        </div>
                         </div>
 
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time3" autocomplete="off">
+                            <label class="btn btn-outline-success" for="Time3">08:00 - 09:00</label>    
+                        </div>
+                        </div>
+                        
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time4" autocomplete="off">
+                            <label class="btn btn-outline-success" for="Time4">08:00 - 09:00</label>    
+                        </div>
                         </div>
 
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time5" autocomplete="off">
+                            <label class="btn btn-outline-success" for="Time5">08:00 - 09:00</label>    
+                        </div>
                         </div>
 
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time6" autocomplete="off">
+                            <label class="btn btn-outline-success" for="Time6">08:00 - 09:00</label>    
+                        </div>
                         </div>
 
-                        <div class="col-6 col-sm-4 mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                            <label class="form-check-label" for="flexRadioDefault1">08:00 - 09:00</label>
+                        <div class="col-3">
+                        <div class="btn-group  mb-3" >
+                            <input type="radio" class="btn-check" name="options" id="Time7" autocomplete="off">
+                            <label class="btn btn-outline-success" for="dTime7">08:00 - 09:00</label>    
                         </div>
+                        </div>
+                        
                         
                     </div>
 
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                        <label for="text">Phone Number</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="input phone number" aria-label="Phone Number">
+                        </div>
+                        <div class="col-md-6">
+                        <label for="text">User Name</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="input user name" aria-label="User Name">
+                        </div>
                     
-                   
-                   
+                    </div><br>
+
 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
                     </div>
                     
                  </form>

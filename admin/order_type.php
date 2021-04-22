@@ -25,7 +25,7 @@ include("session.php");
 
 	<style>
 	
-	.validateUnitname{
+	.validateOrderTypename{
   		color: red;
 	}
 	
@@ -129,10 +129,10 @@ include("session.php");
 					<li><a class="" href="category.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Categories
 					</a></li>
-					<li><a class="active" href="unit.php">
+					<li><a class="" href="unit.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Units
 					</a></li>
-					<li><a class="" href="order_type.php">
+                    <li><a class="active" href="order_type.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Order Type
 					</a></li>
 				</ul>
@@ -163,7 +163,7 @@ include("session.php");
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="col-md-12">
-							Additional Unit
+							Additional Order Type
 						</div>
 					</div>
 					<div class="panel-body">
@@ -172,10 +172,10 @@ include("session.php");
 					<div class="row">
 
                     <div class="col-md-12">
-                    <form id="add_unit">
+                    <form id="add_orderType">
                         <div class="form-group">
-                            <label for="unit">Unit Name</label>
-                            <input type="text" class="form-control" id="unit_name" name="unit_name" placeholder="Unit Name">
+                            <label for="unit">Order Type Name</label>
+                            <input type="text" class="form-control" id="order_type_name" name="order_type_name" placeholder="Order Type Name">
 							<small id="validate" class="form-text text-muted"></small>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
@@ -195,14 +195,14 @@ include("session.php");
 			<div class="col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Units Details
+						Order Type Details
                     </div>
 					<div class="panel-body">
 						
                         <!--Row-->
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="table_unit"></div>
+                                <div id="table_orderType"></div>
                             </div>
                         </div>
                         <!--End Row-->
@@ -227,7 +227,7 @@ include("session.php");
 	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="unit.js"></script>
+	<script src="order_type.js"></script>
 	
 </body>
 </html>

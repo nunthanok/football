@@ -1,5 +1,5 @@
-$('#calendar').datepicker({
-		});
+// $('#calendar').datepicker({
+// 		});
 
 !function ($) {
     $(document).on("click","ul.nav li.parent > a ", function(){          
@@ -28,3 +28,7 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 		$this.find('em').removeClass('fa-toggle-down').addClass('fa-toggle-up');
 	}
 })
+
+$(function(){
+	// $('.money').mask('#.###.###', {reverse: true});
+});
