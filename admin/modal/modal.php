@@ -595,40 +595,34 @@
 		<div class="row"><!--Open Row-->
 
 		<div class="col-md-4">
-
 			<div class="form-group">
-			<label for="sel1">Select Staduim:</label>
-			<select class="form-control col-lg-12" id="sel1" >
-				<option>STADUIM No.1</option>
-				<option>STADUIM No.2</option>
-				<option>STADUIM No.3</option>
-			</select>
-			</div>
-
-		</div>
-
-					
-		<div class="col-md-4">
-		
-		<div class="form-group">
-			<label for="date" class="control-label">Date:</label>
-			<input type="text" class="form-control" id="date" style="height:35px">
-		</div>
-					
+				<label for="date" class="control-label">Date:</label>
+				<input type="text" class="form-control" id="date" style="height:35px">
+			</div>		
 		</div>
 
 
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="sel1">Select Time:</label>
-				<select class="form-control" id="sel1">
-					<option>08:00 - 09:00</option>
-					<option>10:00 - 11:00</option>
-					<option>12:00 - 01:00</option>
-					<option>02:00 - 02:00</option>
-				</select>
+				<label for="booking_time_select">Select Time:</label>
+				<select class="form-control" id="booking_time_select" onchange="loadStadium()"></select>
 			</div>
 		</div>	
+
+
+		<div class="col-md-4">
+
+			<div class="form-group">
+			<label for="booking_stadium_select">Select Staduim:</label>
+			<select class="form-control col-lg-12" id="booking_stadium_select" ></select>
+			</div>
+
+		</div>
+
+					
+		
+
+		
 
 		</div><!--End Row-->
           
@@ -636,8 +630,62 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="booking_save()">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+
+
+<!-- Modal Pay Booking -->
+<div class="modal fade" id="modalPayBooking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Payment Stadium</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+			<div class="col-md-6">
+				<span>ຈຳນວນເງິນ: <p style="font-weight: bold; font-size: 250%;">350.000 kip</p></span>
+
+				<input type="text" class="form-control" name="priceTopay" id="priceTopay" placeholder="Enter the amount">
+				<p style="font-weight: bold; font-size: 150%; color: green;"> Change : 350.000 kip</p>
+
+			</div>
+			<div class="col-md-6" style="border-left: thin solid #ff0000;">
+				<h3 style="font-weight: bold;">Customer Data</h3> <hr>
+				<input type="text" class="form-control" name="cphone" id="cphone" placeholder="59415161">
+				<p class="help-block" style="font-size: 0.8em; color:green;">Please input customer phone to check number of match</p> <br/>
+
+					<table class="table table-bordered">
+						<thead style="font-size: 0.9em;">
+							<tr>
+								<th>Customer Name</th>
+								<th>Number Of Match</th>
+							</tr>
+						</thead>
+						
+						<tr>
+							<tbody style="text-align: center;">
+								<td>-</td>
+								<td>-</td>
+							</tbody>
+						</tr>
+					</table>
+
+			</div>
+		</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div><!--End Modal-->

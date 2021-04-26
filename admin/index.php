@@ -169,7 +169,7 @@ include("session.php");
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						Booking Data
-						<button class="pull-right btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAddBooking">Add Booking</button>
+						<button class="pull-right btn btn-primary btn-lg" onclick="booking()">Add Booking</button>
 					</div>
 					<div class="panel-body">
 					<table class="table table-hover table-bordered">
@@ -208,21 +208,6 @@ include("session.php");
 	<!-- <script src="js/bootstrap-datepicker.js"></script> -->
 	<script src="js/custom.js"></script>
 	<script src="booking.js"></script>
-
-
-	<script>
-	
-		$(function(){
-			$("#date").datepicker();
-		});
-
-
-		
-	
-	</script>
-
-
-
 	
 </body>
 </html>

@@ -12,7 +12,7 @@ $sql="	SELECT
 		FROM orders o 
 			INNER JOIN order_details od ON o.order_id = od.order_id
 			INNER JOIN products p ON od.pro_id = p.pro_id
-			INNER JOIN members m ON o.mem_id = m.mem_id 
+			LEFT JOIN members m ON o.mem_id = m.mem_id 
 			INNER JOIN category c ON p.cat_id = c.cat_id
 		WHERE c.cat_name = 'STADIUM' AND o.order_status = 'pending' ";
 
