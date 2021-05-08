@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         if (name.length < 1) {
             // alert('Text-field is empty.');
-            $("#validate").addClass('validateUnitname').html("Please input unit name");
+            $("#validate").addClass('validateUnitname').html("ກະລຸນາປ້ອນ ຫນ່ວຍສິນຄ້າ");
             return false;
 
         }else{
@@ -28,7 +28,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Insert Unit Successfully',
+                            title: 'ເພີ່ມຫນ່ວຍສິນຄ້າສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -36,7 +36,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
-                            title: 'Insert Unit Fail',
+                            title: 'ເພີ່ມຫນ່ວຍສິນຄ້າບໍ່ສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -101,7 +101,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Edit Unit Successfully',
+                        title: 'ແກ້ໄຂຫນ່ວຍສິນຄ້າສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -109,7 +109,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Edit Unit Fail',
+                        title: 'ແກ້ໄຂຫນ່ວຍສິນຄ້າບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -132,13 +132,14 @@ $(document).ready(function(){
         // console.log(unitId);
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this Unit",
+            title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່?',
+            text: "ຕ້ອງການລົບຫນ່ວຍສິນຄ້າແທ້ ຫລື ບໍ່",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'ຍົກເລີກ',
+            confirmButtonText: 'ຕົກລົງ'
           }).then((result) => {
             if (result.isConfirmed) {
              
@@ -153,7 +154,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Delete Unit Successfully',
+                                title: 'ລົບຫນ່ວຍສິນຄ້າສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -161,7 +162,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'error',
-                                title: 'Delete Unit Fail',
+                                title: 'ລົບຫນ່ວຍສິນຄ້າບໍ່ສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });

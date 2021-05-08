@@ -3,14 +3,13 @@
 <table class="table table-hover table-bordered" id="member_table">
 						<thead style="background-color: #30a5ff; color: white;">
 							<tr>
-								<th>No.</th>
-								<th>Member ID</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Match QTY</th>
-								<th>Register Date</th>
-                                <th>Manage</th>
-                                <th>Detail</th>
+								<th>ລຳດັບ</th>
+								<th>ລະຫັດສະມາຊິກ</th>
+                                <th>ຊື່ ສະມາຊິກ</th>
+                                <th>ເບີໂທ</th>
+                                <th>ຈຳນວນນັດທີເຕະ</th>
+								<th>ວັນທີສະຫມັກ</th>
+                                <th>ຈັດການສະມາຊິກ</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -36,10 +35,9 @@
                                 <td><?php echo $row["mem_match"]?></td>
                                 <td><?php echo date('d/m/Y', $timestamp)?></td>
                                 <td>
-                                <button class="btn btn-warning edit_data" data-id="<?php echo $row["mem_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-                                <button class="btn btn-danger delete_data" data-id="<?php echo $row["mem_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                <button class="btn btn-warning edit_data" data-id="<?php echo $row["mem_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂຂໍ້ມູນ</button>
+                                <button class="btn btn-danger delete_data" data-id="<?php echo $row["mem_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບຂໍ້ມູນ</button>
                                 </td>
-                                <td><button class="btn btn-primary"><i class="fa fa-address-card-o" aria-hidden="true"></i> Detail</button></td>
 							</tr>
 
                             <?php } }?>

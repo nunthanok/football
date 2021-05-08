@@ -9,7 +9,7 @@ $(document).ready(function(){
         var name = $('#cat_name').val();
 
         if(name.length < 1){
-            $("#validate").addClass('validateCatename').html("Please input category name");
+            $("#validate").addClass('validateCatename').html("ກະລຸນາປ້ອນຊື່ປະເພດສິນຄ້າກ່ອນ");
             return false;
 
         }else{
@@ -26,7 +26,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Insert Category Successfully',
+                            title: 'ເພີ່ມປະເພດສິນຄ້າສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -34,7 +34,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
-                            title: 'Insert Category Fail',
+                            title: 'ເພີ່ມປະເພດສິນຄ້າບໍ່ສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -93,7 +93,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Edit Category Successfully',
+                        title: 'ແກ້ໄຂປະເພດສິນຄ້າສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -101,7 +101,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Edit Category Fail',
+                        title: 'ແກ້ໄຂປະເພດສິນຄ້າສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -118,13 +118,14 @@ $(document).ready(function(){
         // console.log(catId);
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this Category",
+            title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່?',
+            text: "ຕ້ອງການລົບປະເພດສິນຄ້າແທ້ບໍ່",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'ຍົກເລີກ',
+            confirmButtonText: 'ຕົກລົງ'
           }).then((result) => {
             if (result.isConfirmed) {
              
@@ -139,7 +140,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Delete Category Successfully',
+                                title: 'ລົບປະເພດສິນຄ້າສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -147,7 +148,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'error',
-                                title: 'Delete Category Fail',
+                                title: 'ລົບປະເພດສິນຄ້າບໍ່ສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });

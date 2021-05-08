@@ -4,13 +4,13 @@
 <table class="table table-hover table-bordered" id="product_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
-            <th>No.</th>
-            <th>Product Code</th>
-            <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Product Unit</th>
-            <th>Product Category</th>
-            <th>Manage</th>
+            <th>ລຳດັບ</th>
+            <th>ລະຫັດ ສິນຄ້າ</th>
+            <th>ຊື່ ສິນຄ້າ</th>
+            <th>ລາຄາ ສິນຄ້າ</th>
+            <th>ຫນ່ວ ຍສິນຄ້າ</th>
+            <th>ປະເພດ ສິນຄ້າ</th>
+            <th>ຈັດການສິນຄ້າ</th>
         </tr>
     </thead>
     <tbody>
@@ -36,8 +36,8 @@
             <td><?php echo $row["u_name"]?></td>
             <td><?php echo $row["cat_name"]?></td>
             <td>
-            <button type="button" name="edit" class="btn btn-warning edit_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" name="edit" class="btn btn-warning edit_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂສິນຄ້າ</button>
+            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບສິນຄ້າ</button>
             </td>
         </tr>
 

@@ -17,7 +17,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Insert Member Successfully',
+                        title: 'ເພີ່ມສະມາຊິກສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -25,7 +25,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Insert Member Fail',
+                        title: 'ເພີ່ມສະມາຊິກສຳບໍ່ເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -79,7 +79,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Edit Staff Successfully',
+                        title: 'ແກ້ໄຂສະມາຊິກສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -87,7 +87,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Edit Staff Fail',
+                        title: 'ແກ້ໄຂສະມາຊິກບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -108,13 +108,14 @@ $(document).ready(function(){
         // console.log(memberId);
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this member",
+            title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່ ?',
+            text: "ຕ້ອງການລົບສະມາຊິກແທ້ ຫລື ບໍ່ ",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'ຍົກເລີກ',
+            confirmButtonText: 'ຕົກລົງ'
           }).then((result) => {
             if (result.isConfirmed) {
              
@@ -130,7 +131,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Delete Member Successfully',
+                                title: 'ລົບຂໍ້ມູນສະມາຊິກສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -138,7 +139,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'error',
-                                title: 'Delete Member Fail',
+                                title: 'ລົບຂໍ້ມູນສະມາຊິກບໍ່ສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -163,5 +164,29 @@ $(document).ready(function(){
 // Function Load Table Member Data
 function loadTableMember(){
     $("#table_member").load("table_member.php");
+}
+
+function checkPhone(){
+    var mPhone = $("#m_phone").val();
+    // console.log(mPhone);
+    $.ajax({
+        method: "POST",
+        url: "checkphone.php",
+        data: {mPhone:mPhone},
+        success: function(data){
+            if(data == "have"){
+                $("div.validateInput").addClass("has-error");
+                $("#warningPhone").text("ເບີນີ້ໄດ້ລົງທະບຽນແລ້ວ ກະລຸນາໃຊ້ເບີອື່ນ");
+                $(':input[type="submit"]').prop('disabled', true);
+                
+            }else{
+                $("#vadilationPhone").empty();
+                $(':input[type="submit"]').prop('disabled', false);
+                $("div.validateInput").removeClass("has-error");
+            }
+            
+
+        }
+    });
 }
 

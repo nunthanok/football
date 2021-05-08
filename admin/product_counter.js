@@ -12,7 +12,7 @@ $(document).ready(function(){
             Swal.fire({
                 position: 'center',
                 icon: 'error',
-                title: 'No Bill, Please Add Bill',
+                title: 'ບໍ່ມີບິນ, ກະລຸນາເພີ່ມບິນກ່ອນ',
                 showConfirmButton: false,
                 timer: 1500
               });
@@ -83,8 +83,8 @@ function loadBill(){
             $("#bill_counter_content").empty();
             $("#bill_detail_item").empty();
             if(data.length == 0){
-                $("#bill_counter_content").html("<div class=\" alert alert-warning\" role=\"alert\">No Bill !</div>");
-                $("#bill_detail_item").html("<div class=\" alert alert-warning\" role=\"alert\">No Bill !</div>");
+                $("#bill_counter_content").html("<div class=\" alert alert-warning\" role=\"alert\">ບໍ່ມີບິນ !</div>");
+                $("#bill_detail_item").html("<div class=\" alert alert-warning\" role=\"alert\">ບໍ່ມີບິນ !</div>");
             }else{
                 $.each(data,function(k,v){
                     $("#bill_counter_content").append("<div class=\"col-md-4\">"
@@ -142,7 +142,7 @@ function loadBillDetail(){
             var total = 0;
             if(data.length == 0){
                 $("#bill_detail_list_item").append("<tr colspan=\"5\">"
-                    +"<td>No Item</td>"
+                    +"<td>ບໍ່ມີລາຍການສິນຄ້າ</td>"
                 +"</tr>");
             }else{
                 $.each(data,function(k,v){
@@ -160,7 +160,7 @@ function loadBillDetail(){
                     +"</tr>");
                 });
                 $("#totalValue").val(total);
-                $("#total").text("Total: " + total + " Kip");
+                $("#total").text("ລວມທັງຫມົດ: " + total + " Kip");
             }
         },
         error: function (request, status, error) {
@@ -180,7 +180,7 @@ function getCategory(){
         success:function(data){
             $("#product_counter").empty();
             if(data.length == 0){
-                $("#product_counter").html("<div class=\" alert alert-warning\" role=\"alert\">No Product !</div>");
+                $("#product_counter").html("<div class=\" alert alert-warning\" role=\"alert\">ບໍ່ມີສິນຄ້າ !</div>");
             }else{
                 $.each(data,function(k,v){
                     $("#product_counter").append("<div class=\"col-sm-6 col-md-4\">"
@@ -228,7 +228,7 @@ function addBill(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Insert Bill Successfully',
+                        title: 'ເພີ່ມບິນສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -240,7 +240,7 @@ function addBill(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Insert Bill Fail',
+                        title: 'ເພີ່ມບິນບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -277,7 +277,7 @@ function payment(){
         Swal.fire({
             position: 'center',
             icon: 'error',
-            title: 'No Product!!!',
+            title: 'ບໍ່ມີສິນຄ້າ !!!',
             showConfirmButton: false,
             timer: 1500
             });
@@ -349,7 +349,7 @@ function finalCheckOut(e){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Checkout Bill Fail',
+                        title: 'ການຈ່າຍເງິນບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                         });
@@ -367,13 +367,14 @@ function finalCheckOut(e){
 function delete_bill_list(e, order_id){
     e.preventDefault();
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You want to delete this Bill",
+        title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່ ?',
+        text: "ຕ້ອງການລົບບິນແທ້ ຫລື ບໍ່ ",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        cancelButtonText: 'ຍົກເລີກ',
+        confirmButtonText: 'ຄົງລົງ'
       }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
@@ -386,7 +387,7 @@ function delete_bill_list(e, order_id){
                     if(data === "OK"){
                         Swal.fire({
                             position: 'center',
-                            title: 'Delete success' ,
+                            title: 'ລົບບິນສຳເລັດ' ,
                             icon: 'success',
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK',
@@ -400,7 +401,7 @@ function delete_bill_list(e, order_id){
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
-                            title: 'Delete Faile ' + data,
+                            title: 'ລົບບິນບໍ່ສຳເລັດ ' + data,
                             showConfirmButton: false,
                             timer: 1500
                         });

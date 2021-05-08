@@ -1,7 +1,7 @@
 <?php 
 include("../database/connect.php");
 
-$sql = ("SELECT * FROM products INNER JOIN units ON products.u_id = units.u_id");
+$sql = ("SELECT * FROM products INNER JOIN units ON products.u_id = units.u_id WHERE products.cat_id NOT IN('00000000018')");
 $query = $conn->query($sql);
 
 if($query->num_rows > 0){
@@ -17,14 +17,14 @@ if($query->num_rows > 0){
     <div class="thumbnail">
         <div class="caption">
             <h5><?php echo $row["pro_name"]?></h5>
-            <span>Code : <?php echo $row["pro_code"]?> ||</span>
-            <span class="label label-success"> Unit: <?php echo $row["u_name"]?></span>
-            <h4><?php echo $row["pro_price"]?> KIP</h4>
+            <span>ລະຫັດ : <?php echo $row["pro_code"]?> ||</span>
+            <span class="label label-success"> ຫນ່ວຍ: <?php echo $row["u_name"]?></span>
+            <h4><?php echo $row["pro_price"]?> ກີບ</h4>
 
             <div class="row">
                 
                     <div  class="col-md-6">
-                        <button type="button" class="btn btn-primary addTobill" data-id="<?php echo $row["pro_id"]?>">Add to Bill</button>
+                        <button type="button" class="btn btn-primary addTobill" data-id="<?php echo $row["pro_id"]?>"><i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i> ເພີ່ມສິນຄ້າ</button>
                     </div>
 
                     <div  class="col-md-6">

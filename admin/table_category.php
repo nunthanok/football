@@ -3,10 +3,10 @@
 <table class="table table-hover table-bordered" id="categories_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
-            <th>No.</th>
-            <th>ID</th>
-            <th>Category Name</th>
-            <th>Edit</th>
+            <th>ລຳດັບ</th>
+            <th>ລະຫັດ ປະເພດສິນຄ້າ</th>
+            <th>ຊື່ ປະເພດສິນຄ້າ</th>
+            <th>ຈັດການປະເພດສິນຄ້າ</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +29,8 @@
             <td><?php echo $row["cat_id"]?></td>
             <td><?php echo $row["cat_name"]?></td>
             <td>
-            <button type="button" class="btn btn-warning edit_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" class="btn btn-danger delete_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" class="btn btn-warning edit_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂຂໍ້ມູນ</button>
+            <button type="button" class="btn btn-danger delete_cat" data-id="<?php echo $row["cat_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບໄຂຂໍ້ມູນ</button>
             </td>
         </tr>
 

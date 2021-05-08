@@ -2,10 +2,10 @@
 <table class="table table-hover table-bordered" id="orderType_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
-            <th>No.</th>
-            <th>ID</th>
-            <th>Unit Name</th>
-            <th>Manage</th>
+            <th>ລຳດັບ</th>
+            <th>ລະຫັດໂຕະ</th>
+            <th>ຊື່ໂຕະ</th>
+            <th>ຈັດການ</th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +28,8 @@
             <td><?php echo $row["or_type_id"]?></td>
             <td><?php echo $row["or_type_name"]?></td>
             <td>
-            <button type="button" class="btn btn-warning edit_order_type" data-id="<?php echo $row["or_type_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" class="btn btn-danger delete_order_type" data-id="<?php echo $row["or_type_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" class="btn btn-warning edit_order_type" data-id="<?php echo $row["or_type_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂ</button>
+            <button type="button" class="btn btn-danger delete_order_type" data-id="<?php echo $row["or_type_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບ</button>
             </td>
         </tr>
 

@@ -61,7 +61,7 @@ $(document).ready(function(){
 					Swal.fire({
 						position: 'center',
 						icon: 'success',
-						title: 'Sing in complete',
+						title: 'ເຂົ້າສູ່ລະບົບສຳເລັດ',
 						showConfirmButton: false,
 						timer: 1500
 					});
@@ -70,7 +70,7 @@ $(document).ready(function(){
 					Swal.fire({
 						position: 'center',
 						icon: 'error',
-						title: 'Username and Password incorrect!',
+						title: 'ຊື່ ຫລື ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ',
 						showConfirmButton: false,
 						timer: 1500
 					});

@@ -1,4 +1,5 @@
 <?php 
+include("session.php");
 include("../database/connect.php");
 ?>
 <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -6,19 +7,28 @@ include("../database/connect.php");
 <table class="table table-hover table-bordered" id="staff_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
-            <th>No.</th>
-            <th>Staff Name</th>
-            <th>Staff Phone</th>
-            <th>Staff Username</th>
-            <th>Staff Status</th>
-            <th>Staff Role</th>
-            <th>Manage</th>
+            <th>ລຳດັບ</th>
+            <th>ຊື ພະນັກງານ</th>
+            <th>ເບີໂທ</th>
+            <th>ຊື່ເຂົ້າໃຊ້ລະບົບ</th>
+            <th>ສະຖານະ</th>
+            <th>ສິດເຂົ້າໃຊ້</th>
+            <th>ຈັດການພະນັກງານ</th>
         </tr>
     </thead>
     <tbody>
 
         <?php 
-        $sql = "SELECT * FROM staffs";
+
+    if ($_SESSION["staff_role"] == '1') {
+
+        $sql = "SELECT * FROM staffs ";
+        
+    }else{
+
+        $sql = "SELECT * FROM staffs WHERE staff_role != '1' ";
+    }
+        // $sql = "SELECT * FROM staffs ";
         $result = $conn->query($sql);
         $no = 1;
         
@@ -48,8 +58,8 @@ include("../database/connect.php");
             ?>
             </td>
             <td>
-            <button type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" name="edit" class="btn btn-primary edit_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂຂໍ້ມູນ</button>
+            <button type="button" name="delete" class="btn btn-danger delete_data" data-id="<?php echo $row["staff_id"]; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບຂໍ້ມູນ</button>
             </td>
         </tr>
 

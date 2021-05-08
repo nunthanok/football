@@ -1,3 +1,7 @@
+<?php 
+date_default_timezone_set("Asia/Bangkok");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,26 +13,37 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="admin/css/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 
     <title>Football</title>
+
+    <style>
+    
+    @font-face {
+        font-family: myFirstFont;
+        src: url("admin/fonts/NotoSansLao-Regular.ttf");
+        }
+
+        body{
+            font-family: "Montserrat", "Helvetica Neue","myFirstFont", Helvetica, Arial, sans-serif; }
+        }
+
+    </style>
   </head>
   <body>
 
         <!-- Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.php">Football Club!!!</a>
+                <a class="navbar-brand" href="index.php">ລະບົບຈອງເດີ່ນບານອອນລາຍ</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">LogIn</a>
+                        <a class="nav-link active" aria-current="page" href="#">ຫນ້າຫລັກ</a>
                         </li>
                     </ul>
                 </div>
@@ -43,112 +58,46 @@
             <div class="col-md-12">
                 <div class="card">
                 <div class="card-body">
-                <label for="text"><h3>Choose soccer field</h3></label><br><hr>
                     
-                <form>
-
-                    <div class="row">
-                        <div class="col-4">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options-outlined" id="stadium1" autocomplete="off" >
-                            <label class="btn btn-outline-success" for="stadium1">STADIUM No.1</label>   
-                        </div>
-                        </div>
-                        <div class="col-4">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options-outlined" id="stadium2" autocomplete="off">
-                            <label class="btn btn-outline-success" for="stadium2">STADIUM No.2</label>       
-                        </div>
-                        </div>
-                        <div class="col-4">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options-outlined" id="stadium3" autocomplete="off">
-                            <label class="btn btn-outline-success" for="stadium3">STADIUM No.3</label>    
-                        </div>
-                        </div>
-                        
-                    </div><br>
-                    
-                    
-                    
+                <form id="bookingIndexForm">
 
                     <div class="col-12 mb-3">
-                    <label for="text"><h3>Choose Date</h3></label>
-                     <input type="text" class="form-control" id="datepicker"></div>
-
-
-
-                    <div class="row">
-                    <label for="text"><h3>Choose Time</h3></label>
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time1" autocomplete="off" >
-                            <label class="btn btn-outline-success" for="Time1">08:00 - 09:00</label>   
-                        </div>
-                        </div>
-
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time2" autocomplete="off">
-                            <label class="btn btn-outline-success" for="Time2">08:00 - 09:00</label>       
-                        </div>
-                        </div>
-
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time3" autocomplete="off">
-                            <label class="btn btn-outline-success" for="Time3">08:00 - 09:00</label>    
-                        </div>
-                        </div>
-                        
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time4" autocomplete="off">
-                            <label class="btn btn-outline-success" for="Time4">08:00 - 09:00</label>    
-                        </div>
-                        </div>
-
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time5" autocomplete="off">
-                            <label class="btn btn-outline-success" for="Time5">08:00 - 09:00</label>    
-                        </div>
-                        </div>
-
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time6" autocomplete="off">
-                            <label class="btn btn-outline-success" for="Time6">08:00 - 09:00</label>    
-                        </div>
-                        </div>
-
-                        <div class="col-3">
-                        <div class="btn-group  mb-3" >
-                            <input type="radio" class="btn-check" name="options" id="Time7" autocomplete="off">
-                            <label class="btn btn-outline-success" for="dTime7">08:00 - 09:00</label>    
-                        </div>
-                        </div>
-                        
-                        
+                    <label for="text"><h3>ເລືອກວັນທີ</h3></label>
+                      <input type="text" class="form-control" id="datepicker" autocomplete="off" readonly >
                     </div>
 
 
+                    <div class="row">
+                    <label for="text"><h3>ເລືອກເວລາ</h3></label>
+                        <div id="index_time" class="row"></div>
+                    </div>
+
+
+                    <div class="row">
+                    <label for="text"><h3>ເລືອກເດີ່ນ</h3></label><br><hr>
+
+                        <div id="index_stadium" class="row"></div>
+
+                        
+
+                        
+                    </div><br>
 
                     <div class="row">
                         <div class="col-md-6">
-                        <label for="text">Phone Number</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="input phone number" aria-label="Phone Number">
+                        <label for="text">ຊື່ ຜູ້ຈອງ</label>
+                        <input class="form-control form-control-lg" type="text"  id="bname" name="bname" aria-label="Phone Number">
                         </div>
                         <div class="col-md-6">
-                        <label for="text">User Name</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="input user name" aria-label="User Name">
+                        <label for="text">ເບີໂທລະສັບ</label>
+                        <input class="form-control form-control-lg" type="text" id="bphone" name="bphone"  aria-label="User Name">
                         </div>
                     
                     </div><br>
 
 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                        <button class="btn btn-primary btn-lg" type="button"  onclick="booking_save()">ສັ່ງຈອງເດີ່ນ</button>
                     </div>
                     
                  </form>
@@ -171,18 +120,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="admin/js/sweetalert2.all.min.js"></script>
+    <script src="index.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     -->
 
-    <script>
-
-        $( function() {
-            $( "#datepicker" ).datepicker();
-        } );
-    </script>
 
     </script>
   </body>

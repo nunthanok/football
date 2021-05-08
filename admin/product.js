@@ -63,7 +63,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Edit Successfully',
+                        title: 'ແກ້ໄຂຂໍ້ມູນສິນຄ້າສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -71,7 +71,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Edit Fail',
+                        title: 'ແກ້ໄຂຂໍ້ມູນສິນຄ້າບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -89,13 +89,14 @@ $(document).ready(function(){
         // console.log(proId);
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this Product",
+            title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່?',
+            text: "ຕ້ອງການລົບສິນຄ້າແທ້ ຫລື ບໍ່",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'ຍົກເລີກ',
+            confirmButtonText: 'ຕົກລົງ'
           }).then((result) => {
             if (result.isConfirmed) {
              
@@ -110,7 +111,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Delete Successfully',
+                                title: 'ລົບຂໍ້ມູນສິນຄ້າສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -118,7 +119,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'error',
-                                title: 'Delete Fail',
+                                title: 'ລົບຂໍ້ມູນສິນຄ້າບໍ່ສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });

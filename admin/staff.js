@@ -17,7 +17,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Insert Staff Successfully',
+                            title: 'ເພີ່ມຂໍ້ມູນພະນັກງານສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -25,7 +25,7 @@ $(document).ready(function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
-                            title: 'Insert Staff Fail',
+                            title: 'ເພີ່ມຂໍ້ມູນພະນັກງານບໍ່ສຳເລັດ',
                             showConfirmButton: false,
                             timer: 1500
                           });
@@ -39,7 +39,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Insert Staff Fail',
+                        title: 'ລະບົບຜິດພາດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -85,7 +85,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Edit Staff Successfully',
+                        title: 'ແກ້ໄຂຂໍ້ມູນພະນັກງານສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -93,7 +93,7 @@ $(document).ready(function(){
                     Swal.fire({
                         position: 'center',
                         icon: 'error',
-                        title: 'Edtit Staff Fail',
+                        title: 'ແກ້ໄຂຂໍ້ມູນພະນັກງານບໍ່ສຳເລັດ',
                         showConfirmButton: false,
                         timer: 1500
                       });
@@ -117,13 +117,14 @@ $(document).ready(function(){
         // console.log(id);
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this staff",
+            title: 'ຕ້ອງການລົບແທ້ ຫລື ບໍ່ ?',
+            text: "ຕ້ອງການລົບຂໍ້ມູນພະນັກງານແທ້ ຫລື ບໍ່",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            cancelButtonText: 'ຍົກເລີກ',
+            confirmButtonText: 'ຕົກລົງ'
           }).then((result) => {
             if (result.isConfirmed) {
              
@@ -138,7 +139,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Delete Staff Successfully',
+                                title: 'ລົບຂໍ້ມູນພະນັກງານສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });
@@ -146,7 +147,7 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'center',
                                 icon: 'error',
-                                title: 'Delete Staff Fail',
+                                title: 'ລົບຂໍ້ມູນພະນັກງານບໍ່ສຳເລັດ',
                                 showConfirmButton: false,
                                 timer: 1500
                               });

@@ -3,7 +3,7 @@
     <?php 
         include("../database/connect.php");
 
-        $sql = ("SELECT * FROM category");
+        $sql = ("SELECT * FROM category WHERE cat_id NOT IN( '00000000018') ");
         $query = $conn->query($sql);
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){

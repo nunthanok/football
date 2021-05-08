@@ -107,7 +107,7 @@ include("session.php");
 		<ul class="nav menu">
 			<li ><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em> Booking</a></li>
 			<li><a href="counter.php"><em class="fa fa-television">&nbsp;</em> Counter</a></li>
-			<li class="active"><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li>
+			<!-- <li class="active"><a href="report.php"><em class="fa fa-bar-chart">&nbsp;</em> Report</a></li> -->
 			<li><a href="member.php"><em class="fa fa-user-o">&nbsp;</em> Member</a></li>
 			<li><a href="staff.php"><em class="fa fa-user-secret">&nbsp;</em> Staff</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
@@ -125,6 +125,20 @@ include("session.php");
 					</a></li>
                     <li><a class="" href="order_type.php">
 						<span class="fa fa-angle-right">&nbsp;</span> Order Type
+					</a></li>
+				</ul>
+			</li>
+
+
+			<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
+				<em class="fa fa-navicon">&nbsp;</em> Report <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-2">
+					<li><a class="" href="report/report_booking/report_booking.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Report Booking
+					</a></li>
+					<li><a class="" href="report/report_salling/report_salling.php">
+						<span class="fa fa-angle-right">&nbsp;</span> Report Salling
 					</a></li>
 				</ul>
 			</li>

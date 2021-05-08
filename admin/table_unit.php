@@ -2,10 +2,10 @@
 <table class="table table-hover table-bordered" id="unit_table">
     <thead style="background-color: #30a5ff; color: white;">
         <tr>
-            <th>No.</th>
-            <th>ID</th>
-            <th>Unit Name</th>
-            <th>Manage</th>
+            <th>ລຳດັບ</th>
+            <th>ລະຫັດ</th>
+            <th>ຊື່ ຫົວຫນ່ວຍສິນຄ້າ</th>
+            <th>ຈັດການຫົວຫນ່ວຍສິນຄ້າ</th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +28,8 @@
             <td><?php echo $row["u_id"]?></td>
             <td><?php echo $row["u_name"]?></td>
             <td>
-            <button type="button" class="btn btn-warning edit_unit" data-id="<?php echo $row["u_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
-            <button type="button" class="btn btn-danger delete_unit" data-id="<?php echo $row["u_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button type="button" class="btn btn-warning edit_unit" data-id="<?php echo $row["u_id"]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> ແກ້ໄຂຂໍ້ມູນ</button>
+            <button type="button" class="btn btn-danger delete_unit" data-id="<?php echo $row["u_id"]?>"><i class="fa fa-trash-o" aria-hidden="true"></i> ລົບຂໍ້ມູນ</button>
             </td>
         </tr>
 
