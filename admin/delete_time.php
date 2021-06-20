@@ -2,7 +2,7 @@
 
 include("../database/connect.php");
 
- $time_id = $_POST["time_id"];
+ $time_id = $conn -> real_escape_string($_POST["time_id"]);
 
  $sql = "DELETE FROM booking_time WHERE time_id = '$time_id' ";
 

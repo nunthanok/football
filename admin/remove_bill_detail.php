@@ -1,7 +1,7 @@
 <?php  
 include("../database/connect.php");
 
-$od_id = $_POST["od_id"];
+$od_id = $conn -> real_escape_string($_POST["od_id"]);
 
 
 

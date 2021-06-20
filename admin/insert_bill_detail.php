@@ -1,9 +1,9 @@
 <?php  
 include("../database/connect.php");
 
-$order_id = $_POST["order_id"];
-$pro_id = $_POST["pro_id"];
-$od_qty = $_POST["od_qty"];
+$order_id = $conn -> real_escape_string($_POST["order_id"]);
+$pro_id = $conn -> real_escape_string($_POST["pro_id"]);
+$od_qty = $conn -> real_escape_string($_POST["od_qty"]);
 
 $sql = ("SELECT * FROM products WHERE pro_id = '$pro_id' ");
 $query = $conn->query($sql);

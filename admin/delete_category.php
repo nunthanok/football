@@ -2,7 +2,7 @@
 
 include("../database/connect.php");
 
- $catId = $_POST["catId"];
+ $catId = $conn -> real_escape_string( $_POST["catId"]);
 
  $sql = "DELETE FROM category WHERE cat_id = '$catId' ";
 

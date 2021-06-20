@@ -19,13 +19,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Sign in to continue</h1>
+            <h1 class="text-center login-title">ເຂົ້າສູ່ລະບົບ</h1>
+			<h6 class="text-center" >ກະລຸນາປ້ອນ ຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານ ເພື່ອເຂົ້າໃຊ້ລະບົບ</h6>
             <div class="account-wall">
                 <form id="form-signin" >
-                <input type="text" class="form-control" placeholder="Username" id="username" name="username" required autofocus>
-                <input type="password" class="form-control" placeholder="Password" id="password" name="password" required><br>
+                <input type="text" class="form-control" placeholder="ຊື່ຜູ້ໃຊ້" id="username" name="username" required autofocus>
+                <input type="password" class="form-control" placeholder="ລະຫັດຜ່ານ" id="password" name="password" required><br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    Sign in</button>
+                  ເຂົ້າສູ່ລະບົບ </button>
                 </form>
             </div>
         </div>

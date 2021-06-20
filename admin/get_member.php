@@ -1,6 +1,6 @@
 <?php 
 include("../database/connect.php");
-$phone = $_POST["cphone"];
+$phone = $conn -> real_escape_string($_POST["cphone"]);
 $sql="	SELECT * FROM members s WHERE s.mem_phone LIKE '%$phone%' LIMIT 1";
 
 $query = $conn->query($sql);

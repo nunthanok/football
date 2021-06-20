@@ -1,7 +1,7 @@
 <?php  
 include("../database/connect.php");
 
-$order_id = $_POST["order_id"];
+$order_id = $conn -> real_escape_string($_POST["order_id"]);
 $sql = ("DELETE FROM orders WHERE order_id = '$order_id' ");
 $sql1 = ("DELETE FROM order_details WHERE order_id = '$order_id' ");
 $query = $conn->query($sql);

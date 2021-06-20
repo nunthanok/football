@@ -2,7 +2,7 @@
 
 include("../database/connect.php");
 
- $unitId = $_POST["unitId"];
+ $unitId = $conn -> real_escape_string($_POST["unitId"]);
 
  $sql = "DELETE FROM units WHERE u_id = '$unitId' ";
 

@@ -2,7 +2,7 @@
 
 include("../database/connect.php");
 
- $staffId = $_POST["staffId"];
+ $staffId = $conn -> real_escape_string($_POST["staffId"]);
 
  $sql = "DELETE FROM staffs WHERE staff_id = '$staffId' ";
 

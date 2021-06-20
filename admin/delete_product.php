@@ -2,7 +2,7 @@
 
 include("../database/connect.php");
 
- $proId = $_POST["proId"];
+ $proId = $conn -> real_escape_string($_POST["proId"]);
 
  $sql = "DELETE FROM products WHERE pro_id = '$proId' ";
 

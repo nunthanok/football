@@ -9,7 +9,8 @@ $(function(){
         maxDate: 3,
         dateFormat: 'dd-mm-yy',
         onSelect: function (dateText, inst) {
-            loadStadium();
+           
+            loadTime();
         }
     }).datepicker("setDate", new Date());
     

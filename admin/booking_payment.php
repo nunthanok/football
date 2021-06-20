@@ -1,9 +1,9 @@
 <?php  
 include("../database/connect.php");
 
-$mem_id = $_POST["mem_id"];
-$mem_id2 = $_POST["mem_id2"];
-$order_id = $_POST["order_id"];
+$mem_id = $conn -> real_escape_string( $_POST["mem_id"]);
+$mem_id2 = $conn -> real_escape_string( $_POST["mem_id2"]);
+$order_id = $conn -> real_escape_string($_POST["order_id"]);
 $discount = 0;
 // team1 count match
 $sql1 = "SELECT mem_match FROM members WHERE mem_id = '$mem_id' ";

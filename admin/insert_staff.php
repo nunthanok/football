@@ -1,10 +1,10 @@
 <?php
 include("../database/connect.php");
 
- $name = $_POST['name'];
- $username = $_POST['username'];
- $password = $_POST['password'];
- $phone = $_POST['phone'];
+ $name = $conn -> real_escape_string($_POST['name']);
+ $username = $conn -> real_escape_string($_POST['username']);
+ $password = $conn -> real_escape_string($_POST['password']);
+ $phone = $conn -> real_escape_string($_POST['phone']);
 
  
  $sql = "INSERT INTO staffs (staff_name, staff_phone, staff_username, staff_password, staff_status, staff_role )

@@ -1,11 +1,15 @@
 <?php
 session_start();
 include("../database/connect.php");
-$username = $_POST["username"];
-$password = $_POST["password"];
+// $username = $_POST["username"];
+// $password = $_POST["password"];
+
+$username = $conn -> real_escape_string($_POST['username']);
+$password = $conn -> real_escape_string($_POST['password']);
 
 $sql = "SELECT * FROM staffs WHERE staff_username = '$username' AND staff_password = '$password' AND staff_status = 'ON' ";
 $result = $conn->query($sql);
+
 
 
 if(mysqli_num_rows($result) > 0 ){ 

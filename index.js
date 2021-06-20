@@ -2,15 +2,13 @@
 $(document).ready(function(){
 
     loadTime();
-    loadStadium();
+    //loadStadium();
     
      $( "#datepicker" ).datepicker({
         dateFormat: 'dd-mm-yy',
         minDate:0,
         maxDate: 3
-     }
-        
-     );
+     }).datepicker("setDate", new Date());
    
 
 });
@@ -21,16 +19,14 @@ function loadTime(){
         url: 'admin/booking_time.php',
         method: 'POST',
         dataType: 'json',
-        data:{
-            dateText:$("#booking_stadium_select").val()
-        },
+        
         success: function(data){
             
             $.each(data, function(k,v){
 
                  $("div#index_time").append("<div class=\"col-3\">"+
                  "<div class=\"btn-group  mb-3\">"+
-                     "<input type=\"radio\" class=\"btn-check\" id=\""+k+"\" name=\"options\" value=\""+ v.time_id+"\" autocomplete=\"off\" >"+
+                     "<input type=\"radio\" class=\"btn-check\" onclick=\" loadStadium(this)\" id=\""+k+"\" name=\"options\" value=\""+ v.time_id+"\" autocomplete=\"off\" >"+
                      "<label class=\"btn btn-outline-success\" for=\""+k+"\">"+ v.time_start+ "-" +v.time_end+ "</label>"+   
                  "</div>"+
                  "</div>");
@@ -45,10 +41,11 @@ function loadTime(){
 }
 
 
-function loadStadium(){
-    $("select#booking_stadium_select").empty();
+function loadStadium(target){
+    $("div#index_stadium").empty();
     var dateText = $("#datepicker").val();
-    var time = $("div#index_time").val();
+    var time = $(target).val();
+
     $.ajax({
         url: 'admin/booking_stadium.php',
         method: 'POST',

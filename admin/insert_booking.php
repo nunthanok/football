@@ -4,7 +4,7 @@ include("../database/connect.php");
 
 //$dateText = $_POST["dateText"];
 
-$staff_id = "13";
+$staff_id = "13"; // ກຳນົດຄ່າ id= 13 (ລູກຄ້າທົ່ວໄປ)
 
 if (isset($_SESSION["staff_id"])) {
     
@@ -14,16 +14,16 @@ if (isset($_SESSION["staff_id"])) {
 
 
 $date = strtotime(date("Y-m-d", strtotime("+3 day")));
-$dateText = strtotime($_POST["dateText"]);
+$dateText = strtotime($conn -> real_escape_string($_POST["dateText"]));
 $dateText = date("Y-m-d", $dateText);
 
 if(strtotime($dateText) <= $date 
     && strtotime($dateText) > strtotime(date("Y-m-d"))
     || (strtotime($dateText) == strtotime(date("Y-m-d") && strtotime(date("Y-m-d")) < strtotime('16:00:00')))
     ){
-    $desc = $_POST["desc"];
-    $time = $_POST["time"];
-    $stadium = $_POST["stadium"];
+    $desc = $conn -> real_escape_string($_POST["desc"]);
+    $time = $conn -> real_escape_string($_POST["time"]);
+    $stadium = $conn -> real_escape_string($_POST["stadium"]);
     
     $date = date('Y-m-d H:i:s');
     
@@ -34,8 +34,8 @@ if(strtotime($dateText) <= $date
     $c_sql="SELECT COUNT(0) FROM orders o 
             INNER JOIN order_details od ON (o.order_id = od.order_id)
             INNER JOIN booking_time t ON (od.time_id = t.time_id)
-            WHERE DATE_FORMAT(o.book_date,'%d-%m-%Y') = '".$dateText."'
-                    AND t.time_id = '".$time."' AND od.pro_id = '".$stadium."' AND o.order_status != 'pending' ";
+            WHERE DATE_FORMAT(o.book_date,'%Y-%m-%d') = DATE_FORMAT('".$dateText."', '%Y-%m-%d')
+                    AND t.time_id = '".$time."' AND od.pro_id = '".$stadium."' AND o.order_status = 'pending' ";
     $c_query = $conn->query($c_sql);
     $c_count = $c_query->fetch_row()[0] ?? false;
     
